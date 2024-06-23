@@ -27,7 +27,7 @@ const Types = () => {
 
   const getData = async () => {
     try {
-      const res = await axios.get("/interactive-object-types");
+      const res = await axios.get(`/io-types`);
       const data = res.data;
       setTypes(data);
       setLoading(false);
@@ -40,10 +40,10 @@ const Types = () => {
     getData();
   }, []);
 
-  const onClickEdit = (event, id) => {
-    event.stopPropagation();
-    setActiveID(id);
-    navigate(`/edit-type/${id}`);
+  const onClickEdit = async(event, id) => {
+    // event.stopPropagation();
+    // setActiveID(id);
+    navigate(`/editType/${id}`);
   };
 
   const onClickDelete = (event, id) => {
@@ -71,7 +71,7 @@ const Types = () => {
         />
       </Modal>
       <div className="container mb-4">
-        <h1 className="mb-4 text-center">Types</h1>
+        <h1 className="mb-4 text-center">interactive object type registration </h1>
         <Button
           variant="contained"
           endIcon={<Add />}

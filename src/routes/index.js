@@ -18,6 +18,7 @@ import Test2 from "../pages/Test/Test2";
 import NotFound from "../pages/NotFound/NotFound";
 import AddType from "../pages/AddType/AddType";
 import Types from "../pages/Types/Types";
+import EditType from "../pages/EditType/EditType";
 
 const routes = [
   {
@@ -109,8 +110,8 @@ const routes = [
     component: AddType,
   },
   {
-    path: "/edit-type/:id",
-    component: AddType,
+    path: "/editType/:id",
+    component: EditType,
   },
   {
     path: "/excel-file",

@@ -6,7 +6,7 @@ const Input = (props) => {
   return (
     <label className={styles.input}>
       <span>{label}</span>
-      <input type={type} {...register(name, { required: true })} />
+      <input type={type} {...register(name)} />
       {errors[name] && <p>{errors[name].type}</p>}
     </label>
   );
