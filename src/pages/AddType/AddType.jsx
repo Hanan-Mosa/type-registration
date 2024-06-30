@@ -73,6 +73,7 @@ const AddType = () => {
       console.log("data= ", data);
     } catch (error) {
       console.log(error);
+      toast.error( `${error}`);
     }
   };
   
