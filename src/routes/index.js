@@ -20,6 +20,7 @@ import AddType from "../pages/AddType/AddType";
 import Types from "../pages/Types/Types";
 import EditType from "../pages/EditType/EditType";
 
+
 const routes = [
   {
     path: "/",
@@ -113,6 +114,7 @@ const routes = [
     path: "/editType/:id",
     component: EditType,
   },
+
   {
     path: "/excel-file",
     component: ExcelFile,

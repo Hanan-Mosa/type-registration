@@ -1,10 +1,11 @@
-import React from "react";
+import React ,{ useState }from "react";
 import Input from "../../components/Input/Input";
 import { useForm } from "react-hook-form";
 import { Button } from "@mui/material";
 import axios from "../../axios";
 import { toast } from "react-toastify";
 import { useLocation, useParams } from "react-router-dom";
+import Popup from 'reactjs-popup';
 
 const AddType = () => {
   const location = useLocation();
@@ -61,29 +62,39 @@ const AddType = () => {
     defaultValues: async () => await fetchData(),
   });
   
-  const onSubmit = async (values) => {
+  
+    const onSubmit = async (values) => {
     console.log("onSubmit");
     try {
       const res = await axios.post(`/io-types`, {
         ...values,
-         abstractParameter: JSON.parse(values.abstractParameter),
+        abstractParameter: JSON.parse(values.abstractParameter),
       });
       const data = res.data;
+      
       toast.success("Type added successfully!");
+      
       console.log("data= ", data);
     } catch (error) {
       console.log(error);
+      window.alert(error)
+     
     }
   };
   
   const [file, setFile] = React.useState();
-  function handleChange(e) {
+  const  handleChange = async (e) => {
       console.log(e.target.files);
       setFile(URL.createObjectURL(e.target.files[0]));
+      
   }
+  const togglePopup = () => {
+    setIsOpen(!isOpen);
+  };
+  const [isOpen, setIsOpen] = useState(false);
   return (
     <div className="container">
-      <h1 className="text-center mb-4">type registration</h1>
+      <h1 className="text-center mb-4">Type Registration</h1>
       <form onSubmit={handleSubmit(onSubmit)}>
         <Input
           label="typeName"
@@ -194,6 +205,7 @@ const AddType = () => {
             submit
           </Button>
         </div>
+        
       </form>
     </div>
   );

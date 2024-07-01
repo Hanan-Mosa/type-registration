@@ -71,7 +71,7 @@ const Types = () => {
         />
       </Modal>
       <div className="container mb-4">
-        <h1 className="mb-4 text-center">interactive object type registration </h1>
+        <h1 className="mb-4 text-center">Interactive Object Types </h1>
         <Button
           variant="contained"
           endIcon={<Add />}

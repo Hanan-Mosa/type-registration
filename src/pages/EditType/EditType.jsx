@@ -42,8 +42,8 @@ const EditType = () => {
     console.log(res.data);
     return {
       typeName: res.data.typeName,
-      //  description:res.data.typeName,
-       // icon:res.data.icon,
+       description:res.data.typeName,
+       icon:res.data.icon,
       category: res.data.category,
       labels:JSON.stringify(res.data.labels),
       abstractParameter: JSON.stringify(res.data.abstractParameter),
@@ -93,6 +93,8 @@ const EditType = () => {
 
     } catch (error) {
       console.log(error);
+      window.alert(error)
+     
     }
   };
   const [file, setFile] = React.useState();
