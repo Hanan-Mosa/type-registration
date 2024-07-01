@@ -15,6 +15,8 @@ const AddType = () => {
     if (location.pathname === "/add-type") {
       return {
         typeName: "",
+        description:"",
+        icon:"",
         questionOrExplanation: "",
         labels: "",
         templateName:"",
@@ -88,10 +90,19 @@ const AddType = () => {
       setFile(URL.createObjectURL(e.target.files[0]));
       
   }
-  const togglePopup = () => {
-    setIsOpen(!isOpen);
-  };
-  const [isOpen, setIsOpen] = useState(false);
+//   const [image, setImage] = React.useState(null);
+//    const handleEditimage = async (e) => {
+//       const file = e.target.files[0];
+//       const date = new FormData();
+//       date.append("file", file);
+//       const res = await axios.post("https://questions-api-osxg.onrender.com/api/upload", date);
+//       setImage(res.data);
+//       console.log(res.data);
+//       return res.data
+    
+//       
+//     
+//    };
   return (
     <div className="container">
       <h1 className="text-center mb-4">Type Registration</h1>
@@ -106,7 +117,7 @@ const AddType = () => {
          <Input
          
          label="description"
-         name="descrption"
+         name="description"
          type="text"
          register={register}
          errors={errors}

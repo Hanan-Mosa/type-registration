@@ -42,7 +42,7 @@ const EditType = () => {
     console.log(res.data);
     return {
       typeName: res.data.typeName,
-       description:res.data.typeName,
+      description:res.data.description,
        icon:res.data.icon,
       category: res.data.category,
       labels:JSON.stringify(res.data.labels),
@@ -117,13 +117,13 @@ const EditType = () => {
          <Input
          
          label="description"
-         name="descrption"
+         name="description"
          type="text"
          register={register}
          errors={errors}
        />
        <h2>Add Icon:</h2>
-            <input type="file" onChange={handleChange} />
+            <input type="file" onChange={handleChange} register={register} errors={errors} />
             <img src={file} />
         <Input
           label="questionOrExplanation"
